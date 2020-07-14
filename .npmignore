@@ -1,0 +1,6 @@
+
+#上传至npm忽略的文件
+
+node_modules
+src
+test
