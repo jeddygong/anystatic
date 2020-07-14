@@ -25,6 +25,8 @@ module.exports = {
 		"semi": [
 			"error",
 			"always"
-		]
+		],
+		"no-console": 1,
+		"no-alert": 0
 	}
 };
