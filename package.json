@@ -3,11 +3,9 @@
 	"version": "1.0.0",
 	"description": "Tiny NodeJS Static Web Server",
 	"main": "index.js",
-	"script": {
-		"lint": "eslint .",
-		"fix": "eslint --fix"
-	},
 	"scripts": {
+		"lint": "eslint .",
+		"fix": "eslint --fix",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"pre-commit": [
