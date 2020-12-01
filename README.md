@@ -4,7 +4,7 @@ Tiny NodeJS Static Web Server
 ## Installation
 
 ```
-npm i -g andstatic
+npm i -g anystatic
 ```
 
 ## How to use?

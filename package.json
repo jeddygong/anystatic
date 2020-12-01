@@ -1,6 +1,6 @@
 {
 	"name": "anystatic",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Tiny NodeJS Static Web Server",
 	"main": "src/index.js",
 	"bin": {
@@ -11,10 +11,6 @@
 		"fix": "eslint --fix",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"pre-commit": [
-		"fix",
-		"lint"
-	],
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Jeddy-2020/anystatic.git"
@@ -30,8 +26,7 @@
 	},
 	"homepage": "https://github.com/Jeddy-2020/anystatic#readme",
 	"devDependencies": {
-		"eslint": "^7.4.0",
-		"pre-commit": "^1.2.2"
+		"eslint": "^7.4.0"
 	},
 	"dependencies": {
 		"chalk": "^4.1.0",

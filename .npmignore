@@ -1,5 +1,12 @@
 
-#上传至npm忽略的文件
+#上传至npm忽略的文件夹
 
 node_modules
 test
+dev
+
+#文件
+.vscode
+.eslintignore
+.editorconfig
+.eslintrc.js
