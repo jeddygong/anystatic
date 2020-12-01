@@ -2,3 +2,7 @@ node_modules
 dist/
 test
 build/
+dev/
+
+# 模板文件忽略
+*.tpl
