@@ -3,13 +3,14 @@
  * @Author: Jeddy
  * @Date: 2020-07-14 22:14:59
  * @LastEditors: Jeddy
- * @LastEditTime: 2020-11-30 22:24:25
+ * @LastEditTime: 2020-12-02 23:25:31
  */
 
 const http = require("http");
 const chalk = require("chalk");
 const path = require("path");
 const route = require("./route");
+const openBrowser = require("./openBrowser");
 
 const conf = require("./../config/defaultConfig");
 
@@ -32,6 +33,7 @@ class Server {
 		server.listen(this.configs.port, this.configs.hostname, () => {
 			const addr = `http://${this.configs.hostname}:${this.configs.port}`;
 			console.info(`Server started at ${chalk.green(addr)}`);
+			openBrowser(addr);
 		});
 	}
 }

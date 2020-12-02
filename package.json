@@ -1,6 +1,6 @@
 {
 	"name": "anystatic",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Tiny NodeJS Static Web Server",
 	"main": "src/index.js",
 	"bin": {
