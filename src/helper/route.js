@@ -3,7 +3,7 @@
  * @author: Jeddy
  * @Date: 2020-11-29 17:27:11
  * @LastEditors: Jeddy
- * @LastEditTime: 2020-12-01 22:52:47
+ * @LastEditTime: 2020-12-02 23:07:51
  */
 
 const fs = require("fs");
@@ -68,17 +68,18 @@ module.exports = async (req, res, filePath, configs) => {
 				}
 			}
 
-
 			const data = {
 				title: path.basename(filePath),
 				dir: dir ? `/${dir}` : '',
-				files: files.map((file) => {
-					return {
-						file,
-						icon: mime(file)
-					}
-				}),
+				files: await Promise.all(files.map(async (file) => {
+					let nowDir = path.relative(filePath, await fileType(file, filePath))
+						return {
+							file,
+							icon: nowDir ? `/${nowDir}` : ''
+						}
+				}))
 			}
+
 			res.end(template(data));
 		}
 

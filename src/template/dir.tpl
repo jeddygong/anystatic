@@ -16,11 +16,18 @@
 			height: 50px;
 			line-height: 50px;
 		}
+
+		a > img {
+			width: 20px;
+			height: 20px;
+			vertical-align: sub;
+		}
 	</style>
 </head>
 <body>
 	{{#each files}}
 		<a href="{{../dir}}/{{file}}">
+			<img src="{{icon}}">
 			{{file}}
 		</a>
 	{{/each}}

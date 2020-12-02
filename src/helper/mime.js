@@ -3,10 +3,15 @@
  * @author: Jeddy
  * @Date: 2020-11-29 19:56:22
  * @LastEditors: Jeddy
- * @LastEditTime: 2020-12-01 22:55:25
+ * @LastEditTime: 2020-12-02 23:08:03
  */
 
 const path = require("path");
+
+const fs = require("fs");
+const promisify = require("util").promisify;
+const stat = promisify(fs.stat);
+const readdir = promisify(fs.readdir);
 
 const mime =  (filePath) => {
 	// 获取当前文件的最后一个拓展名.xx, 转成小写的
@@ -21,7 +26,26 @@ const mime =  (filePath) => {
 
 };
 
-module.exports = { mime };
+const fileType = async (file, filePath) => {
+	let nowFilePath = path.join(filePath, file);
+	// 获取当前文件的最后一个拓展名.xx, 转成小写的
+	let ext = file.split('.').pop();
+	let image = 'empty.png';
+
+	// 如果没有找到对应的mimeType（读不到拓展名），则返回自己的路径
+	const stats = await stat(nowFilePath);
+	if (stats.isFile()) {
+		if (ext && mimeType['.' + ext]) {
+			image = ext + '.png';
+		}
+	} else if (stats.isDirectory()){
+		image = 'file.png';
+	}
+
+	return path.resolve(__dirname, `../images/${image}`);
+}
+
+module.exports = { mime, fileType }
 
 const mimeType = {
 	".323":"text/h323" ,
